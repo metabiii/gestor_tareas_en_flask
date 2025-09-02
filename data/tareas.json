@@ -1,1 +1,9 @@
-[]
+{
+    "pendientes": [
+        {"id": 1, "texto": "Estudiar Python"},
+        {"id": 2, "texto": "Practicar con Flask"}
+    ],
+    "completadas": [
+        {"id": 3, "texto": "Configurar entorno virtual"}
+    ]
+}
