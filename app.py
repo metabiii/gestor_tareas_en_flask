@@ -5,7 +5,8 @@ import json
 app = Flask(__name__)
 
 # Ruta absoluta del archivo JSON
-ruta_json = os.path.join(os.path.dirname(__file__), "tareas.json")
+ruta_json = os.path.join(os.path.dirname(__file__), "data", "tareas.json")
+
 
 # ------------------------------
 # Funciones para manejar tareas
