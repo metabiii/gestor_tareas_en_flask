@@ -6,7 +6,7 @@ body {
     padding: 20px;
 }
 
-h1 {
+h1, h2 {
     text-align: center;
     color: #2c3e50;
 }
@@ -61,3 +61,15 @@ li {
     justify-content: space-between;
     align-items: center;
 }
+
+li span a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+li span a:hover {
+    color: #2980b9;
+}
+
