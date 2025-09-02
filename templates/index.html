@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestor de Tareas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Gestor de Tareas</h1>
+
+    <form action="/agregar" method="post">
+        <input type="text" name="titulo" placeholder="Nueva tarea" required>
+        <button type="submit">Agregar</button>
+    </form>
+
+    <h2>Pendientes</h2>
+    <ul>
+        {% for tarea in tareas %}
+            {% if tarea.estado == "pendiente" %}
+                <li>
+                    {{ tarea.titulo }}
+                    <a href="/completar/{{ loop.index0 }}">✅</a>
+                    <a href="/eliminar/{{ loop.index0 }}">🗑️</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+    <h2>Completadas</h2>
+    <ul>
+        {% for tarea in tareas %}
+            {% if tarea.estado == "completada" %}
+                <li>
+                    <s>{{ tarea.titulo }}</s>
+                    <a href="/eliminar/{{ loop.index0 }}">🗑️</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</body>
+</html>
